@@ -1,69 +1,102 @@
-body{
-	overflow-x: hidden;
-	color: #000;
-	margin: 0;
-	font-family: 'Roboto', sans-serif;
-	&.disable-scroll{
-		overflow: hidden;
-	}
+body {
+  overflow-x: hidden;
+  color: #000;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  &.disable-scroll {
+    overflow: hidden;
+  }
 }
 
-.wrapper{
-	overflow: hidden
+.wrapper {
+  overflow: hidden;
 }
 
-.section{
-	padding: 120px 0
+.section {
+  padding: 120px 0;
 }
 
-h2, .h2{
-	font-size: 48px;
-	line-height: 62px;
-	font-weight: 900;
-	color: #000;
+h2,
+.h2 {
+  font-size: 48px;
+  line-height: 62px;
+  font-weight: 900;
+  color: #000;
 }
 
-.btn{
-	height: 48px;
-	line-height: 48px;
-	padding: 0 45px;
-	background-color: #6DCAAB;
-	border-radius: 38px;
-	color: #ffffff;
-	font-size: 16px;
-	display: inline-block;
-	transition: 0.3s;
-	&:hover{
-		color: #ffffff;
-		background-color: lighten(#6DCAAB, 10%);
-	}
-	&--black{
-		background-color: #000;
-		&:hover{
-			background-color: #6DCAAB;
-		}
-	}
+.btn {
+  height: 48px;
+  line-height: 48px;
+  padding: 0 45px;
+  background-color: #6dcaab;
+  border-radius: 38px;
+  color: #ffffff;
+  font-size: 16px;
+  display: inline-block;
+  transition: 0.3s;
+  font-weight: 500;
+  &:hover {
+    color: #ffffff;
+    background-color: lighten(#6dcaab, 10%);
+  }
+  &--black {
+    background-color: #000;
+    &:hover {
+      background-color: #6dcaab;
+    }
+  }
+  &.border-btn {
+    background-color: transparent;
+    border: 2px solid #6dcaab;
+    position: relative;
+    color: #000;
+    &:hover {
+      background-color: #6dcaab;
+      color: #fff;
+    }
+  }
+
+  &.has-label {
+    position: relative;
+    .label {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(10px, -50%);
+      border-radius: 35px;
+      line-height: 1.1;
+      font-size: 12px;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+      padding: 3px 7px;
+    }
+    .red-label {
+      background-color: #f1261f;
+      color: #fff;
+    }
+  }
 }
 
-@include media-breakpoint-down(md){
-	.section{
-		padding: 100px 0
-	}
+@include media-breakpoint-down(md) {
+  .section {
+    padding: 100px 0;
+  }
 
-	h2, .h2{
-		font-size: 40px;
-		line-height: 54px;
-	}
+  h2,
+  .h2 {
+    font-size: 40px;
+    line-height: 54px;
+  }
 }
 
-@include media-breakpoint-down(sm){
-	.h2, h2{
-		font-size: 32px;
-		line-height: 38px;
-	}
+@include media-breakpoint-down(sm) {
+  .h2,
+  h2 {
+    font-size: 32px;
+    line-height: 38px;
+  }
 
-	.section{
-		padding: 60px 0
-	}
+  .section {
+    padding: 60px 0;
+  }
 }
-	

@@ -15,7 +15,13 @@
 				<div class="col-6">
 					<h1 class="hero-section__title">Программы питания на каждый день</h1>
 					<p class="hero-section__text">Сервис по ежедневной доставке рационов правильного питания в городе Минске от 35 руб./день</p>
-					<a class="btn scroll-to" href="#program">Подобрать программу</a>
+					<div class="btn-row">
+						<a class="btn scroll-to __mPS2id _mPS2id-h" href="#program">Подобрать программу</a>
+						<a class="btn border-btn scroll-to has-label js-try-btn __mPS2id _mPS2id-h" href="#program">
+								<span class="text">Попробовать еду</span>
+								<span class="label red-label">Скидка 50%</span>
+						 </a>
+				</div>
 				</div>
 				<div class="col-6">
 					<img class="hero-section__img" src="img/hero-section-bg.png" alt="">
@@ -178,12 +184,12 @@
 							</div>
 							<div class="duration__group">
 								<label class="duration-item" for="dur-1">
-									<input type="radio" checked id="dur-1" name="dur">
-									<div class="duration-item__body">
-										<div class="duration-item__body-title">Попробовать</div>
-										<div class="duration-item__price">62 руб.</div>
+									<input type="radio" class="js-input-try" id="dur-1" name="dur" value="1" data-days="1" data-percent="50" data-ifpercent="true" data-text="Попробовать">
+									<div class="duration-item__body  hot-discount">
+											<div class="duration-item__body-title">Попробовать</div>
+											<div class="duration-item__discount">- 50%</div>
 									</div>
-								</label>
+							</label>
 								<label class="duration-item" for="dur-2">
 									<input type="radio" id="dur-2" name="dur">
 									<div class="duration-item__body">
@@ -261,7 +267,7 @@
 						<div class="program__block">
 							<div class="program__block-discount">-5%</div>
 							<label class="radio" for="radio-4">
-								<input class="radio__input" type="checkbox" id="radio-4">
+								<input class="radio__input recurring-input" type="checkbox" id="radio-4">
 								<div class="radio__mark"></div>
 								<div class="radio__content">
 									<div class="radio__title">Автопродление</div>
@@ -1433,7 +1439,7 @@
 				<div class="program__block">
 					<div class="program__block-discount">-5%</div>
 					<label class="radio" for="radio-4">
-						<input class="radio__input" type="checkbox" id="radio-4">
+						<input class="radio__input recurring-input" type="checkbox" id="radio-4">
 						<div class="radio__mark"></div>
 						<div class="radio__content">
 							<div class="radio__title">Автопродление</div>
@@ -1453,6 +1459,29 @@
 					</div>
 				</div>
 				<a class="btn btn--black" data-fancybox data-src="#panel-order" href="javascript:;">Заказать</a>
+				<form action="https://securesandbox.webpay.by/" method="post" id="form_submit_bank" style="display: none">
+					<input type="hidden" name="*scart">
+					<input type="hidden" name="wsb_version" value="2">
+					<input type="hidden" name="wsb_language_id" value="russian">
+					<input type="hidden" name="wsb_storeid" value="945744143">
+					<input type="hidden" name="wsb_store" value="EatEasy">
+					<input type="hidden" name="wsb_customer_id" value="375291159920-sbRKAYRsLz">
+					<!-- <input type="hidden" name="wsb_operation_type" value=""> -->
+					<input type="hidden" name="wsb_operation_type" value="recurring_bind">
+					<input type="hidden" name="wsb_order_num" value="ORDER-1595426360">
+					<input type="hidden" name="wsb_test" value="1">
+					<input type="hidden" name="wsb_currency_id" value="BYN">
+					<input type="hidden" name="wsb_seed" value="1595426360">
+					<input type="hidden" name="wsb_return_url" value="https://eateasy.vnetby.net/thanks-page/">
+					<input type="hidden" name="wsb_email" value="">
+					<input type="hidden" name="wsb_phone" value="">
+					<input type="hidden" name="wsb_invoice_item_name[0]" value="Fit">
+					<input type="hidden" name="wsb_invoice_item_quantity[0]" value="1">
+					<input type="hidden" name="wsb_invoice_item_price[0]" value="252.70">
+					<input type="hidden" name="wsb_total" value="252.70">
+					<input type="hidden" name="wsb_signature" value="f4fe856ec36596798898d7fd10d922662162dc16">
+					<input type="submit" class="btn btn--black" value="Перейти к оплате">
+			</form>
 			</div>
 		</div>
 	</div>

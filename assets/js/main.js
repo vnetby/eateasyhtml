@@ -1,4 +1,4 @@
-$(window).scroll(function(){
+$(window).scroll(function () {
     var sticky = $('.header__bot'),
         scroll = $(window).scrollTop(),
         width = $(this.window).width();
@@ -25,7 +25,7 @@ $("#login").validate({
         number_phone: {
             required: true,
             phoneLength: true,
-            minlength : 21,
+            minlength: 21,
         },
     },
     messages: {
@@ -47,7 +47,7 @@ $("#login").validate({
 
         $.ajax({
             type: "POST",
-            url: document.location.origin+'/wp-admin/admin-ajax.php',
+            url: document.location.origin + '/wp-admin/admin-ajax.php',
             data: data,
             success: function () {
                 $('#login').hide();
@@ -55,19 +55,19 @@ $("#login").validate({
                 $('#panel-auth').find('.panel__back').show();
                 $('#panel-auth').find('.panel__block-title').text('Введите код из СМС');
                 $('#auth-form').find('.login-form__title').html('Мы отправили его на номер<br>' + $('#number_phone_hidden').val());
-                $('#panel-auth').find('.login-form__text a').css('pointer-events','none');
-                $('#panel-auth').find('.login-form__text a').css('opacity','0.5');
-                setTimeout(undisabled_again_code,30000);
-                $( "input[name='number_code']" ).focus();
+                $('#panel-auth').find('.login-form__text a').css('pointer-events', 'none');
+                $('#panel-auth').find('.login-form__text a').css('opacity', '0.5');
+                setTimeout(undisabled_again_code, 30000);
+                $("input[name='number_code']").focus();
             }
         });
         return false; // required to block normal submit since you used ajax
     }
 });
 
-function undisabled_again_code(){
-    $('#panel-auth').find('.login-form__text a').css('pointer-events','all');
-    $('#panel-auth').find('.login-form__text a').css('opacity','1');
+function undisabled_again_code() {
+    $('#panel-auth').find('.login-form__text a').css('pointer-events', 'all');
+    $('#panel-auth').find('.login-form__text a').css('opacity', '1');
 }
 
 $("#auth-form").validate({
@@ -91,10 +91,10 @@ $("#auth-form").validate({
 
         $.ajax({
             type: "POST",
-            url: document.location.origin+'/wp-admin/admin-ajax.php',
+            url: document.location.origin + '/wp-admin/admin-ajax.php',
             data: data,
             success: function () {
-                window.document.location = location.href+"?login=true&#program";
+                window.document.location = location.href + "?login=true&#program";
             }
         });
         return false; // required to block normal submit since you used ajax
@@ -107,15 +107,15 @@ function show_order_form() {
     bodyScrollLock.disableBodyScroll();
 }
 
-$('.get_first_auth').click(function(){
+$('.get_first_auth').click(function () {
     $('#login').show();
     $('#auth-form').hide();
     $('#panel-auth').find('.panel__block-title').text('Авторизуйтесь');
     $(this).hide();
-    $( "input[name='number_phone']" ).focus();
+    $("input[name='number_phone']").focus();
 });
 
-$(document).on('click','#get_code_again',function(e){
+$(document).on('click', '#get_code_again', function (e) {
     var phone = $('#number_phone_hidden').val();
     var code = $('#number_code_hidden').val();
 
@@ -127,13 +127,13 @@ $(document).on('click','#get_code_again',function(e){
 
     $.ajax({
         type: "POST",
-        url: document.location.origin+'/wp-admin/admin-ajax.php',
+        url: document.location.origin + '/wp-admin/admin-ajax.php',
         data: data,
         success: function () {
-            $('#panel-auth').find('.login-form__text a').css('pointer-events','none');
-            $('#panel-auth').find('.login-form__text a').css('opacity','0.5');
-            setTimeout(undisabled_again_code,30000);
-            $( "input[name='number_code']" ).focus();
+            $('#panel-auth').find('.login-form__text a').css('pointer-events', 'none');
+            $('#panel-auth').find('.login-form__text a').css('opacity', '0.5');
+            setTimeout(undisabled_again_code, 30000);
+            $("input[name='number_code']").focus();
         }
     });
     return false;
@@ -144,17 +144,17 @@ $('.phone-mask').inputmask({
     showMaskOnHover: false
 });
 
-$('.close-popup').click(function(){
+$('.close-popup').click(function () {
     $.fancybox.close();
 });
 
-$('.header__menu-btn').click(function(){
-    if($('.header__bot').hasClass('sticky')) {
+$('.header__menu-btn').click(function () {
+    if ($('.header__bot').hasClass('sticky')) {
         $('.mobile-menu').toggleClass('act');
     } else {
         $('.mobile-menu').toggleClass('active');
     }
-    if($(this).hasClass('open')) {
+    if ($(this).hasClass('open')) {
         bodyScrollLock.enableBodyScroll();
     } else {
         bodyScrollLock.disableBodyScroll();
@@ -163,13 +163,13 @@ $('.header__menu-btn').click(function(){
 
 });
 
-$('.mobile-menu__nav a').click(function(){
-    if($('.header__bot').hasClass('sticky')) {
+$('.mobile-menu__nav a').click(function () {
+    if ($('.header__bot').hasClass('sticky')) {
         $('.mobile-menu').toggleClass('act');
     } else {
         $('.mobile-menu').toggleClass('active');
     }
-    if($('.header__menu-btn').hasClass('open')) {
+    if ($('.header__menu-btn').hasClass('open')) {
         bodyScrollLock.enableBodyScroll();
     } else {
         bodyScrollLock.disableBodyScroll();
@@ -177,17 +177,17 @@ $('.mobile-menu__nav a').click(function(){
     $('.header__menu-btn').toggleClass('open');
 });
 
-$('.mobile-menu__nav li').click(function(){
+$('.mobile-menu__nav li').click(function () {
     scrollLock.enableBodyScroll();
     $('.header__menu-btn').toggleClass('open');
     $('.mobile-menu').removeClass('active act');
 });
 
-if($(window).width() > 1199) {
+if ($(window).width() > 1199) {
     $('.scroll-to').mPageScroll2id({
         offset: 99
     });
-} else if($(window).width() > 767) {
+} else if ($(window).width() > 767) {
     $('.scroll-to').mPageScroll2id({
         offset: 85
     });
@@ -197,12 +197,12 @@ if($(window).width() > 1199) {
     });
 }
 
-$('.accardion').each(function(){
+$('.accardion').each(function () {
     var title = $(this).find('.accardion__title');
     var body = $(this).find('.accardion__body');
 
-    title.click(function(){
-        if(title.hasClass('active')) {
+    title.click(function () {
+        if (title.hasClass('active')) {
             body.slideUp(300);
             $(this).removeClass('active');
         } else {
@@ -212,12 +212,12 @@ $('.accardion').each(function(){
     });
 });
 
-$('.faq-section__tabs li').click(function(){
+$('.faq-section__tabs li').click(function () {
     var dataTab = $(this).data('tab');
     $('.faq-section__tabs li').removeClass('active');
     $(this).addClass('active');
     $('.faq-section__content').removeClass('active');
-    $('.faq-section-content-'+dataTab).addClass('active');
+    $('.faq-section-content-' + dataTab).addClass('active');
 });
 
 $('.reviews-slider').slick({
@@ -256,45 +256,45 @@ $('.popular-dishes__slider').slick({
     ]
 });
 
-$('.days li').click(function(){
+$('.days li').click(function () {
 
     var data = $(this).data('day');
 
     $(this).addClass('active').siblings().removeClass('active');
 
     $('.day-content').removeClass('active');
-    $('.day-content-'+ data).addClass('active');
+    $('.day-content-' + data).addClass('active');
 
 });
 
-$('.days-mobile').change(function(){
+$('.days-mobile').change(function () {
 
     var data = $(this).val();
 
     $(this).addClass('active').siblings().removeClass('active');
 
     $('.day-content').removeClass('active');
-    $('.day-content-'+ data).addClass('active');
+    $('.day-content-' + data).addClass('active');
 
 });
 
-$(".day-content").each(function(){
+$(".day-content").each(function () {
 
     var select = $(this).find('.type-select');
     var dayTypeContainer = $('.day-type');
     var mobileSelect = $(this).find('.type-select-mobile');
     var cal = $('.day-content__cal');
 
-    select.each(function(){
+    select.each(function () {
 
         var current = $(this).find('.type-select__current');
         var list = $(this).find('.type-select__list');
         var item = $(this).find('.type-select__item');
 
 
-        current.click(function(){
+        current.click(function () {
 
-            if( $(this).hasClass('active') ) {
+            if ($(this).hasClass('active')) {
                 list.hide();
                 $(this).removeClass('active');
             } else {
@@ -303,15 +303,15 @@ $(".day-content").each(function(){
             }
         });
 
-        item.click(function(){
+        item.click(function () {
             var val = $(this).data('val');
             var text = $(this).html();
             var itemDataVal = $(this).data('cal');
 
-            dayTypeContainer.each(function(){
+            dayTypeContainer.each(function () {
                 var id = $(this).data('id');
 
-                if(id == val) {
+                if (id == val) {
                     $(this).addClass('active');
                 }
                 else $(this).removeClass('active');
@@ -328,15 +328,15 @@ $(".day-content").each(function(){
             });
 
             $('input[name="type"]').each(function () {
-                $(this).prop('checked',false);
+                $(this).prop('checked', false);
             });
-            $('input[id="type-'+val+'"]').prop('checked',true);
-            $('input[id="type-'+val+'"]').change();
+            $('input[id="type-' + val + '"]').prop('checked', true);
+            $('input[id="type-' + val + '"]').change();
         });
 
     });
 
-    mobileSelect.change(function(){
+    mobileSelect.change(function () {
         var val = $(this).val();
         var selected = $(this).find('option:selected');
         var itemDataVal = selected.data('cal');
@@ -344,10 +344,10 @@ $(".day-content").each(function(){
         cal.html(itemDataVal);
 
         dayTypeContainer.removeClass('active');
-        dayTypeContainer.each(function(){
+        dayTypeContainer.each(function () {
             var id = $(this).data('id');
 
-            if(id == val) {
+            if (id == val) {
                 $(this).addClass('active');
             }
         });
@@ -356,13 +356,11 @@ $(".day-content").each(function(){
 });
 
 
-$(document).mouseup(function(e)
-{
+$(document).mouseup(function (e) {
     var container = $("YOUR CONTAINER SELECTOR");
 
     // if the target of the click isn't the container nor a descendant of the container
-    if (!container.is(e.target) && container.has(e.target).length === 0)
-    {
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
         $('.type-select__current').removeClass('active');
         $('.type-select__list').hide();
     }
@@ -373,8 +371,8 @@ $(document).mouseup(function(e)
 
 function change_food_list(images) {
     var html_img = '';
-    $(images).each(function(index, value) {
-        html_img += '<a href="#select-program-eat" class="open-panel-food" data-id="'+index+'"><img src="'+value+'" alt=""></a>';
+    $(images).each(function (index, value) {
+        html_img += '<a href="#select-program-eat" class="open-panel-food" data-id="' + index + '"><img src="' + value + '" alt=""></a>';
     });
     $('.program__eating-list').html(html_img);
 }
@@ -385,7 +383,7 @@ function change_food_list_slider(data) {
 }
 
 function change_program_text() {
-    var text =  $('input[name="type"]:checked').data('title');
+    var text = $('input[name="type"]:checked').data('title');
     var text_day = $('input[name="dur"]:checked').data('text');
     $('.program__type').html(text + ' ' + text_day);
 }
@@ -394,54 +392,54 @@ function change_sum_text(sum) {
     $('.program__coast').html(sum + ' руб./ день');
 }
 
-function show_discount(discount){
-    if(discount > 0){
+function show_discount(discount) {
+    if (discount > 0) {
         $('#discount_block').show();
         $('#discount_block_order').show();
-        $('#discount_block_value').html(discount+" %");
-        $('#discount_block_order_value').html(discount+" %");
+        $('#discount_block_value').html(discount + " %");
+        $('#discount_block_order_value').html(discount + " %");
     }
-    else{
+    else {
         $('#discount_block').hide();
         $('#discount_block_order').hide();
     }
 }
 
-function change_finish_sum(){
+function change_finish_sum() {
     var days = $('input[name="dur"]:checked').data('days');
-    var week = ~~(days/5);
+    var week = ~~(days / 5);
     var ifpercent = $('input[name="dur"]:checked').data('ifpercent');
     var sum = 0;
     var discount = 0;
-    $('input[name="discount"]:checked').each(function(){
-        if($(this).data('discount') == true){
+    $('input[name="discount"]:checked').each(function () {
+        if ($(this).data('discount') == true) {
             discount += Number($(this).val());
         }
-        else{
-            days += (Number($(this).val())*week);
+        else {
+            days += (Number($(this).val()) * week);
         }
     });
 
     $promocode_discount = $('input[name="promocode"]').data('discount');
 
-    if($promocode_discount != 0){
+    if ($promocode_discount != 0) {
         discount += Number($promocode_discount);
     }
 
-    if($('input[name="auto-renew"]').prop('checked') === true){
-        if(week >= 1) discount += Number($('input[name="auto-renew"]').val());
+    if ($('input[name="auto-renew"]').prop('checked') === true) {
+        if (week >= 1) discount += Number($('input[name="auto-renew"]').val());
     }
 
-    if(ifpercent == true){
+    if (ifpercent == true) {
         var price = $('input[name="cal"]:checked').data('price');
-        if($('input[name="dur"]:checked').data('percent') != 0){
+        if ($('input[name="dur"]:checked').data('percent') != 0) {
             discount += Number($('input[name="dur"]:checked').data('percent'));
         }
-        change_sum_text( $('input[name="cal"]:checked').data('price'));
-        sum = price*days*((100 - discount)/100);
+        change_sum_text($('input[name="cal"]:checked').data('price'));
+        sum = price * days * ((100 - discount) / 100);
         $('#par_discount').show();
     }
-    else{
+    else {
         sum = $('input[name="dur"]:checked').data('percent');
         change_sum_text(sum);
         $('#par_discount').hide();
@@ -449,31 +447,31 @@ function change_finish_sum(){
 
     show_discount(discount);
 
-    var text_day = (days == 1) ? "день" : "дней" ;
+    var text_day = (days == 1) ? "день" : "дней";
 
-    if(sum !== undefined){
-        $('#all_day_value').html('Итого '+days+' ' + text_day);
-        $('#order_all_duration').html('Итого '+days+' ' + text_day);
-        $('#all_sum_value').html(sum.toFixed(2)+' руб.');
-        $('#order_all_price').html(sum.toFixed(2)+' руб.');
+    if (sum !== undefined) {
+        $('#all_day_value').html('Итого ' + days + ' ' + text_day);
+        $('#order_all_duration').html('Итого ' + days + ' ' + text_day);
+        $('#all_sum_value').html(sum.toFixed(2) + ' руб.');
+        $('#order_all_price').html(sum.toFixed(2) + ' руб.');
         $('input[name="wsb_total"]').val(sum.toFixed(2));
         $('input[name="wsb_invoice_item_price[0]"]').val(sum.toFixed(2));
-        $('#order-price').html(sum.toFixed(2)+' руб.');
+        $('#order-price').html(sum.toFixed(2) + ' руб.');
     }
 
     $('.order__program-title').text($('input[name="type"]:checked').data('title'));
     $('input[name="wsb_invoice_item_name[0]"]').val($('input[name="type"]:checked').data('title'));
     $('.order__program-subtitle').text($('input[name="type"]:checked').parent().find('.program-type__text').text());
-    $('.order__program-img').attr('src',$('input[name="type"]:checked').parent().find('.program-type__body').data('src'));
+    $('.order__program-img').attr('src', $('input[name="type"]:checked').parent().find('.program-type__body').data('src'));
     $('#order-ccal').text($('input[name="cal"]:checked').data('count'));
-    $('#order-duration').text($('input[name="dur"]:checked').data('text') + ' ( ' + days+' ' + text_day +' )');
+    $('#order-duration').text($('input[name="dur"]:checked').data('text') + ' ( ' + days + ' ' + text_day + ' )');
 
     get_signature();
 
 }
 
 
-$(document).on('change','input[name="cal"]',function() {
+$(document).on('change', 'input[name="cal"]', function () {
 
     $('.program__eating-consist').html($(this).data('example'));
     change_finish_sum();
@@ -484,17 +482,17 @@ $(document).on('change','input[name="cal"]',function() {
     };
 
     $.ajax({
-        url: document.location.origin+'/wp-admin/admin-ajax.php',
+        url: document.location.origin + '/wp-admin/admin-ajax.php',
         type: 'POST',
         data: data,
-        success: function( data ) {
+        success: function (data) {
             change_food_list(JSON.parse(data).images);
             change_food_list_slider(JSON.parse(data).slider);
         }
     });
 });
 
-$(document).on('change','input[name="type"]',function() {
+$(document).on('change', 'input[name="type"]', function () {
     $('#program_number').val($(this).val());
     var data = {
         number: $(this).val(),
@@ -502,10 +500,10 @@ $(document).on('change','input[name="type"]',function() {
     };
 
     $.ajax({
-        url: document.location.origin+'/wp-admin/admin-ajax.php',
+        url: document.location.origin + '/wp-admin/admin-ajax.php',
         type: 'POST',
         data: data,
-        success: function( data ) {
+        success: function (data) {
             $('.daily-calories__group').html(JSON.parse(data)['cal']);
             $('.duration__group').html(JSON.parse(data)['dur']);
             change_food_list(JSON.parse(data)['food']);
@@ -515,45 +513,45 @@ $(document).on('change','input[name="type"]',function() {
             change_finish_sum();
             change_program_text();
 
-            setTimeout( function(){
+            setTimeout(function () {
                 $('input[name="cal"]').each(function () {
-                    $(this).prop('checked',false);
-                    if( parseInt($(this).data('count')) == parseInt($('#select_program').data('maincal'))){
-                        $(this).prop('checked','checked');
+                    $(this).prop('checked', false);
+                    if (parseInt($(this).data('count')) == parseInt($('#select_program').data('maincal'))) {
+                        $(this).prop('checked', 'checked');
                     }
                 });
-            },50);
+            }, 50);
         }
     });
 });
 
-$(document).on('change','input[name="dur"],input[name="discount"],input[name="auto-renew"],input[name="discount-order"],input[name="auto-renew-order"]',function() {
-    if($(this).attr('name') == "discount"){
-        if($(this).prop('checked') == true){
-            $('#radio-order-'+$(this).data('id')).prop('checked',true);
+$(document).on('change', 'input[name="dur"],input[name="discount"],input[name="auto-renew"],input[name="discount-order"],input[name="auto-renew-order"]', function () {
+    if ($(this).attr('name') == "discount") {
+        if ($(this).prop('checked') == true) {
+            $('#radio-order-' + $(this).data('id')).prop('checked', true);
         }
-        else $('#radio-order-'+$(this).data('id')).prop('checked',false);
+        else $('#radio-order-' + $(this).data('id')).prop('checked', false);
     }
 
-    if($(this).attr('name') == "discount-order"){
-        if($(this).prop('checked') == true){
-            $('#radio-'+$(this).data('id')).prop('checked',true);
+    if ($(this).attr('name') == "discount-order") {
+        if ($(this).prop('checked') == true) {
+            $('#radio-' + $(this).data('id')).prop('checked', true);
         }
-        else $('#radio-'+$(this).data('id')).prop('checked',false);
+        else $('#radio-' + $(this).data('id')).prop('checked', false);
     }
 
-    if($(this).attr('name') == "auto-renew"){
-        if($(this).prop('checked') == true){
-            $('input[name="auto-renew-order"]').prop('checked',true);
+    if ($(this).attr('name') == "auto-renew") {
+        if ($(this).prop('checked') == true) {
+            $('input[name="auto-renew-order"]').prop('checked', true);
         }
-        else $('input[name="auto-renew-order"]').prop('checked',false);
+        else $('input[name="auto-renew-order"]').prop('checked', false);
     }
 
-    if($(this).attr('name') == "auto-renew-order"){
-        if($(this).prop('checked') == true){
-            $('input[name="auto-renew"]').prop('checked',true);
+    if ($(this).attr('name') == "auto-renew-order") {
+        if ($(this).prop('checked') == true) {
+            $('input[name="auto-renew"]').prop('checked', true);
         }
-        else $('input[name="auto-renew"]').prop('checked',false);
+        else $('input[name="auto-renew"]').prop('checked', false);
     }
 
     change_finish_sum();
@@ -562,10 +560,10 @@ $(document).on('change','input[name="dur"],input[name="discount"],input[name="au
 
 change_finish_sum();
 
-$(document).on('submit','#order',function() {
+$(document).on('submit', '#order', function () {
     var $form = $(this);
     var add_par = [];
-    $('input[name="discount"]:checked').each(function(){
+    $('input[name="discount"]:checked').each(function () {
         add_par.push($(this).parent().find('.radio__title').text());
     });
     var data = {
@@ -579,16 +577,16 @@ $(document).on('submit','#order',function() {
     };
 
     $.ajax({
-        url: document.location.origin+'/wp-admin/admin-ajax.php',
+        url: document.location.origin + '/wp-admin/admin-ajax.php',
         type: 'POST',
         data: data,
-        success: function( data ) {
+        success: function (data) {
             $.fancybox.close();
-            var form_text =  JSON.parse(data);
-            $('#thanks').find('.popup__title').text(""+form_text['title']);
-            $('#thanks').find('.popup__text').text(""+form_text['text']);
-            $('#thanks').find('.btn--black').text(""+form_text['button']);
-            $.fancybox.open ({
+            var form_text = JSON.parse(data);
+            $('#thanks').find('.popup__title').text("" + form_text['title']);
+            $('#thanks').find('.popup__text').text("" + form_text['text']);
+            $('#thanks').find('.btn--black').text("" + form_text['button']);
+            $.fancybox.open({
                 src: '#thanks',
                 type: 'inline'
             });
@@ -601,7 +599,7 @@ $(document).on('submit','#order',function() {
 
 /* program */
 
-$(document).on('submit','#callback',function() {
+$(document).on('submit', '#callback', function () {
     var $form = $(this);
     var data = {
         phone: $form.find('input[name="callback_phone"]').val(),
@@ -609,16 +607,16 @@ $(document).on('submit','#callback',function() {
     };
 
     $.ajax({
-        url: document.location.origin+'/wp-admin/admin-ajax.php',
+        url: document.location.origin + '/wp-admin/admin-ajax.php',
         type: 'POST',
         data: data,
-        success: function( data ) {
+        success: function (data) {
             $.fancybox.close();
-            var form_text =  JSON.parse(data);
-            $('#thanks').find('.popup__title').text(""+form_text['title']);
-            $('#thanks').find('.popup__text').text(""+form_text['text']);
-            $('#thanks').find('.btn--black').text(""+form_text['button']);
-            $.fancybox.open ({
+            var form_text = JSON.parse(data);
+            $('#thanks').find('.popup__title').text("" + form_text['title']);
+            $('#thanks').find('.popup__text').text("" + form_text['text']);
+            $('#thanks').find('.btn--black').text("" + form_text['button']);
+            $.fancybox.open({
                 src: '#thanks',
                 type: 'inline'
             });
@@ -628,7 +626,7 @@ $(document).on('submit','#callback',function() {
     return false;
 });
 
-var disabledDays = [2, 4,6,0];
+var disabledDays = [2, 4, 6, 0];
 
 
 
@@ -643,18 +641,18 @@ $('.datepicker-input').datepicker({
             }
         }
     },
-    onSelect: function() {
+    onSelect: function () {
         check_order_field();
     }
 });
 
 $('.form__select').niceSelect();
 
-$('.add-comment').click(function(){
+$('.add-comment').click(function () {
 
     var text = $(this).find('span');
 
-    if($(this).hasClass('active')) {
+    if ($(this).hasClass('active')) {
         $(this).removeClass('active');
         text.html('Добавить комментарий');
         $('.form__group--hidden').hide();
@@ -709,13 +707,13 @@ function init_slider() {
     });
 }
 
-$('.programs__list-item').each(function(){
+$('.programs__list-item').each(function () {
 
     var btn = $(this).find('.show-more');
     var hiddenText = $(this).find('.programs__list-item-content-part-2');
 
-    btn.click(function(){
-        if($(this).hasClass('active')){
+    btn.click(function () {
+        if ($(this).hasClass('active')) {
             $(this).removeClass('active').html('Подробнее');
             hiddenText.hide();
         } else {
@@ -725,20 +723,20 @@ $('.programs__list-item').each(function(){
     });
 
 });
-$(document).on('click','.open-panel',function(e){
+$(document).on('click', '.open-panel', function (e) {
 
     e.preventDefault();
     var data = $(this).attr('href');
 
-    if(data == '#panel-auth'){
-        $( "input[name='number_phone']" ).focus();
+    if (data == '#panel-auth') {
+        $("input[name='number_phone']").focus();
     }
 
     $(data).addClass('active');
     $('.overlay').addClass('active');
     bodyScrollLock.disableBodyScroll();
 });
-$(document).on('click','.panel__close,.overlay',function(e){
+$(document).on('click', '.panel__close,.overlay', function (e) {
     $('.panel').removeClass('active');
     $('.overlay').removeClass('active');
     bodyScrollLock.enableBodyScroll();
@@ -746,7 +744,7 @@ $(document).on('click','.panel__close,.overlay',function(e){
     history.pushState({}, null, document.location.origin);
 });
 
-$('.overlay').click(function(){
+$('.overlay').click(function () {
     $('.panel').removeClass('active');
     $('.overlay').removeClass('active');
     bodyScrollLock.enableBodyScroll();
@@ -776,11 +774,11 @@ function calc_program_calories() {
             koeff_age = woman_program_info.koeff_age;
         }
 
-        var main_koeff = (parseFloat(calc_koeff) + parseFloat(koeff_weight)*weight + parseFloat(koeff_height)*height - parseFloat(koeff_age)*age)*activites_group_min*target_group;
+        var main_koeff = (parseFloat(calc_koeff) + parseFloat(koeff_weight) * weight + parseFloat(koeff_height) * height - parseFloat(koeff_age) * age) * activites_group_min * target_group;
 
         console.log(main_koeff);
 
-        var koer_perc = parseInt(main_koeff)*1.12;
+        var koer_perc = parseInt(main_koeff) * 1.12;
 
         var first_checked_program_ccal = $('input[name="type_program"]').data('cal')[0];
         var checked_program_status = false;
@@ -792,10 +790,10 @@ function calc_program_calories() {
             $(this).attr('checked', false);
             var program = $(this);
             $(program).parents('.programs__list-item').hide();
-            jQuery.each(jQuery(program).data('cal'),function(){
-                if( ((parseInt(main_koeff) <= parseInt(this) ) === true) && ((parseInt(koer_perc) > parseInt(this)) === true) ) {
+            jQuery.each(jQuery(program).data('cal'), function () {
+                if (((parseInt(main_koeff) <= parseInt(this)) === true) && ((parseInt(koer_perc) > parseInt(this)) === true)) {
                     if (checked_program_status === false) {
-                        $(program).prop('checked','checked');
+                        $(program).prop('checked', 'checked');
                         checked_program_status = true;
                         checked_program_ccal = parseInt(this);
                         checked_program = $(program);
@@ -806,11 +804,11 @@ function calc_program_calories() {
 
         });
 
-        if( checked_program_ccal === false) {
+        if (checked_program_ccal === false) {
             $('input[name="type_program"]').each(function () {
                 $(this).parents('.programs__list-item').hide();
             });
-            if ((parseInt(main_koeff)*0.9) < parseInt(first_checked_program_ccal)) {
+            if ((parseInt(main_koeff) * 0.9) < parseInt(first_checked_program_ccal)) {
                 main_koeff = $('input[name="type_program"]:first').data('cal')[0];
                 checked_program_ccal = $('input[name="type_program"]:first').data('cal')[0];
                 checked_program = $('input[name="type_program"]:first');
@@ -820,57 +818,57 @@ function calc_program_calories() {
                 checked_program = $('input[name="type_program"]:last');
             }
             $(checked_program).parents('.programs__list-item').show();
-            $(checked_program).prop('checked','checked');
+            $(checked_program).prop('checked', 'checked');
         }
-        else{
+        else {
             main_koeff = checked_program_ccal;
         }
-        $('#select_program').data('maincal',main_koeff)
+        $('#select_program').data('maincal', main_koeff)
         $('#program_select_cal').html(parseInt(main_koeff) + ' ккал/день')
         $('.programs').show();
         $('.panel__block-selection-title').html(checked_program.data('title') + ", " + $('#select_program').data('maincal'));
     }
 }
 
-$( document ).ready(function(){
+$(document).ready(function () {
     calc_program_calories();
     init_slider();
 });
 
-$(document).on('change','input[name="sex-group"],input[name="activites-group"],input[name="target-group"]',function() {
+$(document).on('change', 'input[name="sex-group"],input[name="activites-group"],input[name="target-group"]', function () {
     calc_program_calories();
 });
 
-$(document).on('keyup','input[name="program_old"],input[name="sex-group"],input[name="program_height"],input[name="program_weight"]',function() {
+$(document).on('keyup', 'input[name="program_old"],input[name="sex-group"],input[name="program_height"],input[name="program_weight"]', function () {
     calc_program_calories();
 });
 
-$( document ).on('change','input[name="type_program"]',function(){
-    $('.panel__block-selection-title').html($('input[name="type_program"]:checked').data('title')+", "+$('#select_program').data('maincal'));
+$(document).on('change', 'input[name="type_program"]', function () {
+    $('.panel__block-selection-title').html($('input[name="type_program"]:checked').data('title') + ", " + $('#select_program').data('maincal'));
 });
 
-$('#select_program').click(function(){
+$('#select_program').click(function () {
     $('input[name="type"]').each(function () {
-        $(this).prop('checked',false);
+        $(this).prop('checked', false);
     });
-    $('input[id="type-'+$('input[name="type_program"]:checked').data('id')+'"]').prop('checked',true);
-    $('input[id="type-'+$('input[name="type_program"]:checked').data('id')+'"]').change();
+    $('input[id="type-' + $('input[name="type_program"]:checked').data('id') + '"]').prop('checked', true);
+    $('input[id="type-' + $('input[name="type_program"]:checked').data('id') + '"]').change();
     $('.panel').removeClass('active');
     $('.overlay').removeClass('active');
     bodyScrollLock.enableBodyScroll();
 
 });
 
-$(document).on('click','.open-panel-food',function(e){
+$(document).on('click', '.open-panel-food', function (e) {
 
     e.preventDefault();
     var data = $(this).attr('href');
     var this_id = $(this).data('id');
-    $(data+' .panel-program__slider').each(function () {
-        $(this).slick('slickGoTo',this_id , true);
+    $(data + ' .panel-program__slider').each(function () {
+        $(this).slick('slickGoTo', this_id, true);
     });
-    $(data+' .panel-program__others').each(function () {
-        $(this).slick('slickGoTo',this_id , true);
+    $(data + ' .panel-program__others').each(function () {
+        $(this).slick('slickGoTo', this_id, true);
     });
     $(data).addClass('active');
     $('.overlay').addClass('active');
@@ -912,16 +910,16 @@ $("#office_callback").validate({
         };
 
         $.ajax({
-            url: document.location.origin+'/wp-admin/admin-ajax.php',
+            url: document.location.origin + '/wp-admin/admin-ajax.php',
             type: 'POST',
             data: data,
-            success: function( data ) {
+            success: function (data) {
                 $.fancybox.close();
-                var form_text =  JSON.parse(data);
-                $('#thanks').find('.popup__title').text(""+form_text['title']);
-                $('#thanks').find('.popup__text').text(""+form_text['text']);
-                $('#thanks').find('.btn--black').text(""+form_text['button']);
-                $.fancybox.open ({
+                var form_text = JSON.parse(data);
+                $('#thanks').find('.popup__title').text("" + form_text['title']);
+                $('#thanks').find('.popup__text').text("" + form_text['text']);
+                $('#thanks').find('.btn--black').text("" + form_text['button']);
+                $.fancybox.open({
                     src: '#thanks',
                     type: 'inline'
                 });
@@ -935,26 +933,26 @@ $("#office_callback").validate({
     }
 });
 
-$(document).on('click','#send_promocode',function() {
+$(document).on('click', '#send_promocode', function () {
     var data = {
         promocode: $('input[name="promocode"]').val(),
         action: 'get_promocode'
     };
 
     $.ajax({
-        url: document.location.origin+'/wp-admin/admin-ajax.php',
+        url: document.location.origin + '/wp-admin/admin-ajax.php',
         type: 'POST',
         data: data,
-        success: function( data ) {
+        success: function (data) {
             var info = JSON.parse(data);
             var text = info.text;
 
-            if(info.status  == true){
+            if (info.status == true) {
                 $('.promocode__status').removeClass('error-promocode');
-                $('input[name="promocode"]').data('discount',info.discount);
+                $('input[name="promocode"]').data('discount', info.discount);
                 change_finish_sum();
             }
-            else{
+            else {
                 $('.promocode__status').addClass('error-promocode');
             }
             $('.promocode__status').text(text);
@@ -964,11 +962,11 @@ $(document).on('click','#send_promocode',function() {
 });
 
 
-$(document).on('change','input[name="wsb_email_order"]',function() {
+$(document).on('change', 'input[name="wsb_email_order"]', function () {
     $('input[name="wsb_email"]').val($(this).val());
 });
 
-$(document).on('change','input[name="wsb_phone_order"]',function() {
+$(document).on('change', 'input[name="wsb_phone_order"]', function () {
     $('input[name="wsb_phone"]').val($(this).val());
 });
 
@@ -983,10 +981,10 @@ function get_signature() {
     };
     var signature = "";
     $.ajax({
-        url: document.location.origin+'/wp-admin/admin-ajax.php',
+        url: document.location.origin + '/wp-admin/admin-ajax.php',
         type: 'POST',
         data: data,
-        success: function( data ) {
+        success: function (data) {
             $('input[name="wsb_signature"]').val(data);
         }
     });
@@ -996,26 +994,26 @@ function check_order_field() {
     var check_fields = true;
 
     var data_fields = {
-        'wsb_name_order' : $('input[name="wsb_name_order"]').val(),
-        'wsb_surname_order' : $('input[name="wsb_surname_order"]').val(),
-        'wsb_email_order' : $('input[name="wsb_email_order"]').val(),
-        'wsb_phone_order' : $('input[name="wsb_phone_order"]').val(),
-        'wsb_address_order' : $('input[name="wsb_address_order"]').val(),
-        'wsb_house_order' : $('input[name="wsb_house_order"]').val(),
-        'wsb_date_order' : $('input[name="wsb_date_order"]').val(),
-        'wsb_time_order' : $('select[name="wsb_time_order"]').val(),
+        'wsb_name_order': $('input[name="wsb_name_order"]').val(),
+        'wsb_surname_order': $('input[name="wsb_surname_order"]').val(),
+        'wsb_email_order': $('input[name="wsb_email_order"]').val(),
+        'wsb_phone_order': $('input[name="wsb_phone_order"]').val(),
+        'wsb_address_order': $('input[name="wsb_address_order"]').val(),
+        'wsb_house_order': $('input[name="wsb_house_order"]').val(),
+        'wsb_date_order': $('input[name="wsb_date_order"]').val(),
+        'wsb_time_order': $('select[name="wsb_time_order"]').val(),
     }
-    $.each(data_fields,function(index,val) {
-        if(val == "") check_fields = false;
+    $.each(data_fields, function (index, val) {
+        if (val == "") check_fields = false;
     });
 
-   if(check_fields == true){
-       $('#order_submit').removeClass('disabled-btn');
-   }
-   else $('#order_submit').addClass('disabled-btn');
+    if (check_fields == true) {
+        $('#order_submit').removeClass('disabled-btn');
+    }
+    else $('#order_submit').addClass('disabled-btn');
 }
 
-$(document).on('keyup','.form__group .form__input-input,.form__group .form__select',function() {
+$(document).on('keyup', '.form__group .form__input-input,.form__group .form__select', function () {
     check_order_field();
 });
 check_order_field();
@@ -1052,24 +1050,24 @@ $("#main_form_order").validate({
         wsb_house_order: 'Введите адрес доставки',
     },
     submitHandler: function (form) {
-     return false;
+        return false;
     }
 });
 
-$(document).on('click','#order_submit',function() {
+$(document).on('click', '#order_submit', function () {
     $(this).hide();
 
     var add_par = [];
-    $('input[name="discount"]:checked').each(function(){
+    $('input[name="discount"]:checked').each(function () {
         add_par.push($(this).parent().find('.radio__title').text());
     });
     var auto_renew = "Да";
-    if($('input[name="auto-renew-order"]').prop('checked') === true){
+    if ($('input[name="auto-renew-order"]').prop('checked') === true) {
         auto_renew = "Нет";
     }
 
     var appliances = "Да";
-    if( $('input[name="wsb_appliances_order"]').val() === true){
+    if ($('input[name="wsb_appliances_order"]').val() === true) {
         appliances = "Нет";
     }
 
@@ -1086,31 +1084,58 @@ $(document).on('click','#order_submit',function() {
         house: $('input[name="wsb_house_order"]').val(),
         date: $('input[name="wsb_date_order"]').val(),
         time: $('select[name="wsb_time_order"]').val(),
-        appliances:appliances,
+        appliances: appliances,
         payment_method: $('select[name="order_payment_method"] option:selected').text(),
-        add_parametres:add_par,
-        auto_renew:auto_renew,
-        summ:$('input[name="wsb_total"]').val(),
-        order_id:$('input[name="wsb_order_num"]').val(),
+        add_parametres: add_par,
+        auto_renew: auto_renew,
+        summ: $('input[name="wsb_total"]').val(),
+        order_id: $('input[name="wsb_order_num"]').val(),
         action: 'full_order_send'
     };
-    if($('textarea[name="wsb_comment_order"]').val() != ""){
+    if ($('textarea[name="wsb_comment_order"]').val() != "") {
         data['comment'] = $('textarea[name="wsb_comment_order"]').val();
     }
     $.ajax({
-        url: document.location.origin+'/wp-admin/admin-ajax.php',
+        url: document.location.origin + '/wp-admin/admin-ajax.php',
         type: 'POST',
         data: data,
-        success: function( data ) {
-            if($('select[name="order_payment_method"]').val() != "card"){
-                window.document.location = thanks_page+'?wsb_order_num='+$('input[name="wsb_order_num"]').val();
+        success: function (data) {
+            if ($('select[name="order_payment_method"]').val() != "card") {
+                window.document.location = thanks_page + '?wsb_order_num=' + $('input[name="wsb_order_num"]').val();
             }
         }
     });
 
-    if($('select[name="order_payment_method"]').val() =="card"){
+    if ($('select[name="order_payment_method"]').val() == "card") {
         $('#form_submit_bank').find('input[type="submit"]').click();
     }
     return false;
 });
 
+
+
+
+
+
+
+$('.js-try-btn').on('click', function () {
+
+    $('.duration__group input[type="radio"]').prop('checked', false);
+
+    $('.js-input-try').prop('checked', true);
+
+    $('.js-input-try').trigger('change');
+
+});
+
+
+
+
+$('.recurring-input').on('change', function () {
+    var checked = this.checked;
+    if (checked) {
+        $('#form_submit_bank input[name="wsb_operation_type"]').val('recurring_bind');
+    } else {
+        $('#form_submit_bank input[name="wsb_operation_type"]').val('');
+    }
+});
