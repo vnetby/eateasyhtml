@@ -1134,8 +1134,8 @@ $('.js-try-btn').on('click', function () {
 $('.recurring-input').on('change', function () {
     var checked = this.checked;
     if (checked) {
-        $('#form_submit_bank input[name="wsb_operation_type"]').val('recurring_bind');
+        $('#form_submit_bank input[name="wsb_operation_type"]').prop('disabled', false);
     } else {
-        $('#form_submit_bank input[name="wsb_operation_type"]').val('');
+        $('#form_submit_bank input[name="wsb_operation_type"]').prop('disabled', true);
     }
 });
