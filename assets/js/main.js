@@ -1087,7 +1087,7 @@ $(document).on('click', '#order_submit', function () {
         appliances: appliances,
         payment_method: $('select[name="order_payment_method"] option:selected').text(),
         add_parametres: add_par,
-        auto_renew: auto_renew,
+        auto_renew: $('input[name="auto-renew-order"]').prop("checked") ? 'Да' : 'Нет',
         summ: $('input[name="wsb_total"]').val(),
         order_id: $('input[name="wsb_order_num"]').val(),
         action: 'full_order_send'
