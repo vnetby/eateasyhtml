@@ -1134,8 +1134,10 @@ $('.js-try-btn').on('click', function () {
 $('.recurring-input').on('change', function () {
     var checked = this.checked;
     if (checked) {
-        $('#form_submit_bank input[name="wsb_operation_type"]').prop('disabled', false);
+        var input = $('#form_submit_bank input[name="wsb_operation_type"]');
+        if (input.length) return;
+        $('#form_submit_bank').append('<input type="hidden" name="wsb_operation_type" value="recurring_bind">');
     } else {
-        $('#form_submit_bank input[name="wsb_operation_type"]').prop('disabled', true);
+        $('#form_submit_bank input[name="wsb_operation_type"]').remove();
     }
 });
