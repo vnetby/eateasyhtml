@@ -1,0 +1,121 @@
+.advantage {
+    &__list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        background-color: $white;
+        border: 1px solid #E5E5E5;
+        border-radius: 24px;
+    }
+    &__item{
+        position: relative;
+        padding: 39px 28px 33px 132px;
+
+      &::after{
+          content: " ";
+          position: absolute;
+          right: 0;
+          top: 59%;
+          width: 1px;
+          height: 59%;
+          background-color: #E5E5E5;
+          transform: translateY(-50%);
+      }
+      &:nth-child(3n){
+          &::after {
+            display: none;
+          }
+      }
+    }
+
+    &__title{
+        margin-bottom: 10px;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 30px;
+    }
+    &__description{
+        font-size: 16px;
+        line-height: 28px;
+        color: $black;
+    }
+    &__icon{
+        position: absolute;
+        left: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.advantage--up{
+    .advantage__list {
+        transform: translateY(-128px);
+    }
+}
+
+@include media-breakpoint-down(lg){
+    .advantage{
+        &__item{
+            padding: 30px 20px 30px 100px;
+        }
+        &__icon{
+            left: 25px;
+        }
+         &__title{
+            font-size: 20px;
+         }
+        &__description{
+            font-size: 15px;
+            line-height: 24px;
+        }
+    }
+
+    .advantage--up{
+        .advantage__list{
+          transform: translateY(-113px);
+        }
+    }
+}
+
+@include media-breakpoint-down(md){
+    .advantage{
+        &__item{
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+        }
+        &__title{
+            text-align: center;
+        }
+        &__description{
+            text-align: center;
+        }
+        &__icon{
+            position: static;
+            display: block;
+            margin: 0 auto 20px auto;
+            transform: none;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm){
+    .advantage{
+      &__list{
+        display: block;
+        margin-bottom: -75px;
+      }
+      &__item{
+        &::after{
+          content: " ";
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          width: 59%;
+          right: initial;
+          height: 1px;
+          background-color: #E5E5E5;
+          transform: translateX(-50%);
+        }
+      }
+    }
+}

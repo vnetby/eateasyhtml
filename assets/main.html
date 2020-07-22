@@ -1,0 +1,323 @@
+@@include('template/head.html', {
+"pagetitle": "Главная страница",
+"bodyclass": ""
+})
+
+@@include('template/page-header.html',{
+"active_item": "",
+"logged": "false"
+})
+
+<main>
+    <section class="hero-section hero-section--padding-bottom-large">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-12 order-md-1">
+                    <img class="hero-section__img" src="img/hero-section-bg-main.png" width="498" height="374" alt="Доставка горячих обедов в офис">
+                </div>
+                <div class="col-md-6 col-12">
+                    <h1 class="hero-section__title">Доставка горячих обедов в офис</h1>
+                    <p class="hero-section__text">EatEasy организует для Ваших сотрудников вкусное и полезное корпоративное питание с разнообразным меню!</p>
+                    <a class="btn btn--large scroll-to __mPS2id _mPS2id-h mPS2id-clicked" href="#program">Заказать дегустацию</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="advantage advantage--up">
+        <div class="container">
+            <h2 class="visually-hidden">Наши преемущества</h2>
+            <div class="row">
+                <div class="col-12">
+                    <ul class="advantage__list">
+                        <li class="advantage__item">
+                            <img src="img/online-shop.svg" width="60" height="60" class="advantage__icon" alt="Удобные способы заказа">
+                            <div class="advantage__info">
+                                <h3 class="advantage__title">Удобные способы заказа</h3>
+                                <p class="advantage__description">Удобное мобильное приложение или telegram-bot для заказа еды каждым из сотрудников.</p>
+                            </div>
+                        </li>
+                        <li class="advantage__item">
+                            <img src="img/food.svg" width="60" height="60" class="advantage__icon" alt="Удобные способы заказа">
+                            <div class="advantage__info">
+                                <h3 class="advantage__title">Натуральные ингридиенты</h3>
+                                <p class="advantage__description">Только свежие и натуральные продукты. Никаких БАДов и ароматизаторов.</p>
+                            </div>
+                        </li>
+                        <li class="advantage__item">
+                            <img src="img/cash.svg" width="60" height="60" class="advantage__icon" alt="Удобные способы заказа">
+                            <div class="advantage__info">
+                                <h3 class="advantage__title">Гибкие методы оплаты</h3>
+                                <p class="advantage__description">Оплата дважды в месяц. Возможен как наличный, так и безналичный расчет.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="promo">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6 col-12">
+                    <img src="img/promo.jpg" class="promo__preview" width="450" height="547" alt="Вкусная и здоровая еда для Ваших сотрудников">
+                </div>
+                <div class="col-lg-7 col-md-6 col-12">
+                    <div class="promo__info-block">
+                        <h2 class="promo__title h2">Вкусная и здоровая еда для Ваших сотрудников</h2>
+                        <p>Уже  более 10-ти лет вся наша энергия направлена на приготовление вкусных блюдо с использованием свежих, здоровых и полезных ингредиентов. Каждый из Ваших сотрудников может заказать еду в офис через мобильное приложение или telegram-бота. Заказы оформляются минимум за сутки до доставки. Существует возможность заказать на неделю вперед. Еда доставляется каждый день в оговоренное время.</p>
+                        <ul class="promo__list">
+                            <li class="promo__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="promo__list-icon" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <g>
+                                        <path d="M20.0382 40.0001C9.69988 40.0001 1.28857 31.5885 1.28857 21.2505C1.28857 11.1282 9.35136 2.85386 19.3916 2.51165V0L27.0225 5.08707L19.3916 10.1738V7.68806C12.204 8.0268 6.46088 13.9808 6.46088 21.2505C6.46088 28.7365 12.5518 34.8278 20.0382 34.8278C27.5245 34.8278 33.6155 28.7365 33.6155 21.2505V20.604H38.7878V21.2505C38.7878 31.5885 30.3761 40.0001 20.0382 40.0001Z" fill="#6DCAAB"/>
+                                        <path d="M25.2104 11.5524H14.8658C14.1527 11.5524 13.5728 12.1324 13.5728 12.8455V14.1386C13.5728 14.8517 14.1527 15.4317 14.8658 15.4317V16.9148C14.8658 18.9033 16.0295 20.7391 17.8308 21.5905C17.9956 21.6688 18.0985 21.8225 18.0985 21.9914C18.0985 22.1613 17.9956 22.3147 17.8308 22.3927C16.0295 23.2444 14.8658 25.0799 14.8658 27.0693V28.3624C14.1527 28.3624 13.5728 28.9424 13.5728 29.6555V30.9486C13.5728 31.6617 14.1527 32.2417 14.8658 32.2417H25.2104C25.9236 32.2417 26.5035 31.6617 26.5035 30.9486V29.6555C26.5035 28.9424 25.9236 28.3624 25.2104 28.3624V27.0693C25.2104 25.0799 24.0465 23.2444 22.2454 22.3936C22.0803 22.3147 21.9777 22.1613 21.9777 21.9914C21.9777 21.8219 22.0803 21.6688 22.2461 21.5905C24.0465 20.7391 25.2104 18.9033 25.2104 16.9148V15.4317C25.9236 15.4317 26.5035 14.8517 26.5035 14.1386V12.8455C26.5035 12.1324 25.9236 11.5524 25.2104 11.5524ZM25.2117 30.9486H14.8658V29.6555H25.2104L25.2117 30.9486ZM23.9173 16.9148C23.9173 18.4064 23.0438 19.7828 21.6939 20.4215C21.0802 20.7107 20.6847 21.3266 20.6847 21.9914C20.6847 22.656 21.0802 23.2728 21.6939 23.5623C23.0438 24.2007 23.9173 25.5771 23.9173 27.0693V28.3624H16.1589V27.0693C16.1589 25.5771 17.0324 24.2007 18.3823 23.5623C18.9957 23.2735 19.3916 22.6566 19.3916 21.9914C19.3916 21.326 18.9957 20.7107 18.383 20.4209C17.0318 19.7822 16.1589 18.4055 16.1589 16.9142V15.4317H23.9173V16.9148ZM14.8658 14.1386V12.8455H25.2104L25.2117 14.1386H14.8658Z" fill="black"/>
+                                        <path d="M32.9839 17.1121L34.2328 16.7775L34.5674 18.0263L33.3185 18.361L32.9839 17.1121Z" fill="black"/>
+                                        <path d="M31.4741 13.9028L32.5939 13.2562L33.2404 14.3763L32.1203 15.0225L31.4741 13.9028Z" fill="black"/>
+                                        <path d="M29.1816 11.1923L30.0959 10.278L31.0101 11.1923L30.0959 12.1065L29.1816 11.1923Z" fill="black"/>
+                                        <path d="M26.2666 9.16773L26.9128 8.04797L28.0329 8.69419L27.3864 9.81427L26.2666 9.16773Z" fill="black"/>
+                                        <path d="M37.0327 17.2103L38.3002 16.9584L38.5521 18.2259L37.2846 18.4778L37.0327 17.2103Z" fill="black"/>
+                                        <path d="M35.9175 13.9744L37.1127 13.4794L37.6074 14.674L36.4122 15.169L35.9175 13.9744Z" fill="black"/>
+                                        <path d="M34.1919 11.0145L35.2668 10.296L35.985 11.3706L34.9098 12.0891L34.1919 11.0145Z" fill="black"/>
+                                        <path d="M31.9243 8.44984L32.8386 7.53528L33.7528 8.44984L32.8386 9.36408L31.9243 8.44984Z" fill="black"/>
+                                        <path d="M29.1982 6.37638L29.9171 5.30145L30.9914 6.01997L30.2729 7.0949L29.1982 6.37638Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath>
+                                            <rect width="40" height="40" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                Оформление заказов на следующий день до 16:00
+                            </li>
+                            <li class="promo__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="promo__list-icon" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <path d="M28.3869 33.5484H11.6127C10.5456 33.5484 9.67725 34.4168 9.67725 35.4839V38.0645C9.67725 39.1316 10.5456 40 11.6127 40H28.3869C29.454 40 30.3224 39.1316 30.3224 38.0645V35.4839C30.3224 34.4168 29.454 33.5484 28.3869 33.5484Z" fill="#6DCAAB"/>
+                                    <path d="M27.7419 2.58065C25.9632 2.58065 24.5161 4.02774 24.5161 5.80645V9.04903C23.9755 8.63935 23.3096 8.3871 22.5806 8.3871C21.5219 8.3871 20.5884 8.9071 20 9.69742C19.4116 8.9071 18.478 8.3871 17.4193 8.3871C16.6903 8.3871 16.0245 8.63935 15.4838 9.04903V3.22581C15.4838 1.4471 14.0367 0 12.258 0C10.4793 0 9.03223 1.4471 9.03223 3.22581V20.5619V25.8064V26.1471C9.03223 28.0361 10.0116 29.7471 11.6129 30.7039V33.5484H12.9032V29.9239L12.5464 29.7458C11.1748 29.0594 10.3225 27.6806 10.3225 26.1471V25.8064V20.5619C10.3225 19.54 10.7206 18.5787 11.4432 17.8561C11.7993 17.5006 12.2142 17.2226 12.6774 17.029L19.1064 14.3503C19.3567 14.2465 19.6213 14.1935 19.8922 14.1935C21.0187 14.1935 21.9355 15.1097 21.9355 16.2723C21.9355 17.0994 21.4419 17.84 20.678 18.1581L14.1935 20.86V23.2258C14.1935 25.0045 15.6406 26.4516 17.4193 26.4516C18.478 26.4516 19.4116 25.9316 20 25.1413C20.5884 25.9316 21.5219 26.4516 22.5806 26.4516C24.3593 26.4516 25.8064 25.0045 25.8064 23.2258V16.7742V11.6129V5.80645C25.8064 4.73935 26.6748 3.87097 27.7419 3.87097C28.809 3.87097 29.6774 4.73935 29.6774 5.80645V26.1471C29.6774 27.6806 28.8251 29.0594 27.4535 29.7452L27.0967 29.9239V33.5484H28.3871V30.7045C29.9884 29.7477 30.9677 28.0361 30.9677 26.1477V5.80645C30.9677 4.02774 29.5206 2.58065 27.7419 2.58065ZM12.1813 15.8381C11.5619 16.0961 11.0071 16.4677 10.5309 16.9432C10.4574 17.0168 10.3909 17.0961 10.3225 17.1729V3.22581C10.3225 2.15871 11.1909 1.29032 12.258 1.29032C13.3251 1.29032 14.1935 2.15871 14.1935 3.22581V11.6129V14.8387V15L12.1813 15.8381ZM18.6103 13.1594L15.4838 14.4619V11.6129C15.4838 10.5458 16.3522 9.67742 17.4193 9.67742C18.4864 9.67742 19.3548 10.5458 19.3548 11.6129V12.9561C19.1013 12.9974 18.8509 13.0594 18.6103 13.1594ZM17.4193 25.1613C16.3522 25.1613 15.4838 24.2929 15.4838 23.2258V21.7206L19.3548 20.1077V23.2258C19.3548 24.2929 18.4864 25.1613 17.4193 25.1613ZM24.5161 23.2258C24.5161 24.2929 23.6477 25.1613 22.5806 25.1613C21.5135 25.1613 20.6451 24.2929 20.6451 23.2258V19.5697L21.1742 19.349C22.4206 18.8297 23.2258 17.6219 23.2258 16.2361C23.2258 14.6581 22.12 13.3394 20.6451 12.9961V11.6129C20.6451 10.5458 21.5135 9.67742 22.5806 9.67742C23.6477 9.67742 24.5161 10.5458 24.5161 11.6129V16.7742V23.2258Z" fill="black"/>
+                                </svg>
+                                Мин. сумма заказа для доставки: 100 руб.
+                            </li>
+                        </ul>
+                        <a class="btn promo__btn" href="#">Заказать бесплатную дегустацию</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section about-section about-section--gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="about-section__title h2 visually-hidden">Почему мы?</div>
+                    <div class="about-section__list">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="about-item">
+                                    <div class="about-item__icon"><img src="img/about-gray-1.svg" width="100" height="100" alt="Стоимость блюд ниже рынка"></div>
+                                    <div class="about-item__title">Стоимость блюд ниже рынка</div>
+                                    <div class="about-item__text">Большой объем заказа позволяет нас устанавливать цены на блюда ниже рыночной</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="about-item">
+                                    <div class="about-item__icon"><img src="img/about-gray-2.svg" width="100" height="100" alt="Забота о вашей безопасности"></div>
+                                    <div class="about-item__title">Разнообразие блюд</div>
+                                    <div class="about-item__text">200+ различных позиций в меню способные удовлетворить любого потребителя</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="about-item">
+                                    <div class="about-item__icon"><img src="img/about-gray-3.svg" width="100" height="100" alt="Удобные способы работы"></div>
+                                    <div class="about-item__title">Удобные способы работы</div>
+                                    <div class="about-item__text">Удобные способы заказов и администрирования процесса корпоративного питания</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="about-item">
+                                    <div class="about-item__icon"><img src="img/about-gray-4.svg" width="100" height="100" alt="Высокий уровень качества"></div>
+                                    <div class="about-item__title">Высокий уровень качества</div>
+                                    <div class="about-item__text">Заказ будет оставлен у Вашей двери. Курьеру трогать пакеты без перчаток - запрещено.</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="about-item">
+                                    <div class="about-item__icon"><img src="img/about-gray-5.svg" width="100" height="100" alt="Индивидуальные подход"></div>
+                                    <div class="about-item__title">Индивидуальные подход</div>
+                                    <div class="about-item__text">Возможная корректировка меню под Ваши запросы (в т.ч. вегетарианские и диетические блюда)</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="about-item">
+                                    <div class="about-item__icon"><img src="img/about-gray-6.svg" width="100" height="100" alt="Постоянные обновления меню"></div>
+                                    <div class="about-item__title">Постоянные обновления меню</div>
+                                    <div class="about-item__text">Еженедельное обновление ассортимента блюд для отсутствия эффекта "приедания"</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="about-item">
+                                    <div class="about-item__icon"><img src="img/about-gray-7.svg" width="100" height="100" alt="Удобная упаковка"></div>
+                                    <div class="about-item__title">Удобная упаковка</div>
+                                    <div class="about-item__text">Каждое блюдо упаковывается в отдельный экологичный крафтовый контейнер</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="about-item">
+                                    <div class="about-item__icon"><img src="img/about-gray-8.svg" width="100" height="100" alt="Современные технологии"></div>
+                                    <div class="about-item__title">Современные технологии</div>
+                                    <div class="about-item__text">Использование технологий высочайшего класса для приготовления блюд</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="popular-dishes">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="h2 popular-dishes__title">Популярные блюда</h2>
+                    <p class="popular-dishes__description">Nullam laoreet arcu eu massa euismod, quis dictum massa sodales. Proin eget scelerisque dui. Phasellus id enim lobortis, porta orci at, viverra turpis. Phasellus et odio ac velit eleifend condimentum vel at purus. Ut lobortis sed felis vitae luctus.</p>
+                    <div class="popular-dishes__slider">
+                        <div class="popular-dishes__slider-item">
+                            <article class="dish">
+                                <img class="dish__img" src="img/menu-item-img-1.png" width="267" height="267" alt="Salad with Mozarella">
+                                <h3 class="dish__name">Salad with Mozarella</h3>
+                                <p class="dish__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque...</p>
+                            </article>
+                        </div>
+                        <div class="popular-dishes__slider-item">
+                            <article class="dish">
+                                <img class="dish__img" src="img/dish-2.png" width="267" height="267" alt="Red beetroot soup">
+                                <h3 class="dish__name">Red beetroot soup</h3>
+                                <p class="dish__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque ...</p>
+                            </article>
+                        </div>
+                        <div class="popular-dishes__slider-item">
+                            <article class="dish">
+                                <img class="dish__img" src="img/menu-item-img-1.png" width="267" height="267" alt="Salad with Mozarella">
+                                <h3 class="dish__name">Steaks with Asparagus</h3>
+                                <p class="dish__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque ...</p>
+                            </article>
+                        </div>
+                        <div class="popular-dishes__slider-item">
+                            <article class="dish">
+                                <img class="dish__img" src="img/menu-item-img-1.png" width="267" height="267" alt="Salad with Mozarella">
+                                <h3 class="dish__name">Tender rabbit soup</h3>
+                                <p class="dish__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque...</p>
+                            </article>
+                        </div>
+                        <div class="popular-dishes__slider-item">
+                            <article class="dish">
+                                <img class="dish__img" src="img/menu-item-img-1.png" width="267" height="267" alt="Salad with Mozarella">
+                                <h3 class="dish__name">Salad with Mozarella</h3>
+                                <p class="dish__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque...</p>
+                            </article>
+                        </div>
+                        <div class="popular-dishes__slider-item">
+                            <article class="dish">
+                                <img class="dish__img" src="img/menu-item-img-1.png" width="267" height="267" alt="Salad with Mozarella">
+                                <h3 class="dish__name">Red beetroot soup</h3>
+                                <p class="dish__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque ...</p>
+                            </article>
+                        </div>
+                        <div class="popular-dishes__slider-item">
+                            <article class="dish">
+                                <img class="dish__img" src="img/menu-item-img-1.png" width="267" height="267" alt="Salad with Mozarella">
+                                <h3 class="dish__name">Steaks with Asparagus</h3>
+                                <p class="dish__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque ...</p>
+                            </article>
+                        </div>
+                        <div class="popular-dishes__slider-item">
+                            <article class="dish">
+                                <img class="dish__img" src="img/menu-item-img-1.png" width="267" height="267" alt="Salad with Mozarella">
+                                <h3 class="dish__name">Tender rabbit soup</h3>
+                                <p class="dish__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque...</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="download-app">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="download-app__inner">
+                        <h2 class="h2 download-app__title">Скачайте наше мобильное приложение</h2>
+                        <div class="download-app__buttons">
+                            <a href="#" class="download-app__button">
+                                <svg class="download-app__icon" xmlns="http://www.w3.org/2000/svg" width="26" height="32" viewBox="0 0 26 32" fill="none">
+                                    <path d="M21.4061 16.7469C21.3711 12.8786 24.5951 10.9966 24.7425 10.909C22.9166 8.26487 20.0866 7.9036 19.0921 7.8748C16.7152 7.62635 14.4096 9.28747 13.1988 9.28747C11.9638 9.28747 10.0993 7.8988 8.08978 7.93961C5.50384 7.97922 3.08466 9.4663 1.75785 11.7755C-0.98034 16.484 1.06183 23.4034 3.68522 27.2093C4.99753 29.0745 6.53096 31.1545 8.53809 31.0812C10.5017 31.002 11.2352 29.839 13.6048 29.839C15.9527 29.839 16.6415 31.0812 18.6885 31.0344C20.7959 31.002 22.1227 29.1621 23.3891 27.2813C24.9056 25.1461 25.5146 23.0409 25.5388 22.9329C25.4905 22.9161 21.4472 21.3822 21.4061 16.7469ZM17.5393 5.37112C18.5954 4.05927 19.3181 2.27453 19.1175 0.463379C17.5889 0.530592 15.6772 1.51358 14.5764 2.79663C13.6024 3.92724 12.7324 5.7804 12.9571 7.52313C14.6742 7.65036 16.4373 6.66257 17.5393 5.37112Z" fill="white"/>
+                                </svg>
+                                <span class="download-app__button-description">
+                                Download on the
+                            </span>
+                                <span class="download-app__button-title">
+                                App Store
+                            </span>
+                            </a>
+                            <a href="#" class="download-app__button">
+                                <svg class="download-app__icon" xmlns="http://www.w3.org/2000/svg" width="26" height="32" viewBox="0 0 26 32" fill="none">
+                                    <path d="M21.4061 16.7469C21.3711 12.8786 24.5951 10.9966 24.7425 10.909C22.9166 8.26487 20.0866 7.9036 19.0921 7.8748C16.7152 7.62635 14.4096 9.28747 13.1988 9.28747C11.9638 9.28747 10.0993 7.8988 8.08978 7.93961C5.50384 7.97922 3.08466 9.4663 1.75785 11.7755C-0.98034 16.484 1.06183 23.4034 3.68522 27.2093C4.99753 29.0745 6.53096 31.1545 8.53809 31.0812C10.5017 31.002 11.2352 29.839 13.6048 29.839C15.9527 29.839 16.6415 31.0812 18.6885 31.0344C20.7959 31.002 22.1227 29.1621 23.3891 27.2813C24.9056 25.1461 25.5146 23.0409 25.5388 22.9329C25.4905 22.9161 21.4472 21.3822 21.4061 16.7469ZM17.5393 5.37112C18.5954 4.05927 19.3181 2.27453 19.1175 0.463379C17.5889 0.530592 15.6772 1.51358 14.5764 2.79663C13.6024 3.92724 12.7324 5.7804 12.9571 7.52313C14.6742 7.65036 16.4373 6.66257 17.5393 5.37112Z" fill="white"/>
+                                </svg>
+                                <span class="download-app__button-description">
+                                Download on the
+                            </span>
+                                <span class="download-app__button-title">
+                                App Store
+                            </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="get-request">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6 col-12 order-md-1">
+                    <img src="img/get-request.png" class="get-request__preview" width="450" height="547" alt="Оставить заявку на бесплатную дегустацию">
+                </div>
+                <div class="col-lg-7 col-md-6 col-12">
+                    <div class="get-request__info-block">
+                        <h2 class="h2 get-request__title">Оставить заявку на бесплатную дегустацию</h2>
+                        <p class="get-request__description">Proin rhoncus ligula eu tincidunt cursus. Vestibulum orci nulla, blandit vel convallis sit amet, dictum non nisl. Donec sit amet placerat arcu. Cras rhoncus nisl ac dui vehicula, vel dictum diam vestibulum.</p>
+                        <form action="get-requers.php" method="post" class="get-request__form">
+                            <p class="get-request__form-item">
+                                <label for="get-request-name" class="visually-hidden">Ваше имя</label>
+                                <input type="text" name="get-request-name" class="input" id="get-request-name" placeholder="Ваше имя">
+                            </p>
+                            <p class="get-request__form-item">
+                                <label for="get-request-company" class="visually-hidden">Название компании</label>
+                                <input type="text" name="get-request-company" class="input" id="get-request-company" placeholder="Название компании">
+                            </p>
+                            <p class="get-request__form-item">
+                                <label for="get-request-email" class="visually-hidden">Email</label>
+                                <input type="email" name="get-request-company" class="input" id="get-request-email" placeholder="Email">
+                            </p>
+                            <p class="get-request__form-item">
+                                <label for="get-request-tel" class="visually-hidden">Номер телефона</label>
+                                <input type="tel" name="get-request-tel" class="phone-mask input" im-insert="true" id="get-request-tel" placeholder="Номер телефона">
+                            </p>
+                            <p class="get-request__form-item get-request__form-item--submit">
+                                <button type="submit" class="btn get-request__form-button-submit">Оставить заявку</button>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+@@include('template/page-footer.html')
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/plugins.min.js"></script>
+<script src="js/main.min.js"></script>
+
+</body>
+</html>

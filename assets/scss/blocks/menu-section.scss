@@ -1,0 +1,326 @@
+.menu-section{
+    &__inner{
+        position: relative;
+    }
+}
+
+.days{
+    position: absolute;
+    top: 25px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    font-weight: 500;
+    li{
+        margin-right: 30px;
+        cursor: pointer;
+        color: #000;
+        transition: 0.3s;
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            left: 0;
+            width: 0;
+            transition: 0.3s;
+            border-bottom: 1px solid #6DCAAB;
+        }
+        &:hover{
+            color: #6DCAAB;
+        }
+        &.active{
+            color: #6DCAAB;
+            &:after{
+                width: 100%;
+            }
+        }
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+}
+
+.day-content{
+    display: none;
+    &.active{
+        display: block;
+    }
+    &__header{
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+    &__title{
+        margin-right: 25px;
+        font-size: 42px;
+        line-height: 54px;
+    }
+    &__structure{
+        margin-bottom: 40px;
+        font-size: 16px;
+        line-height: 28px;
+    }
+    &__cal{
+        font-size: 42px;
+        line-height: 54px;
+        font-weight: 900;
+    }
+    &__select-type{
+        margin-right: 20px;
+        .select2{
+            width: 170px !important;
+            &:focus{
+                outline: none;
+            }
+        }
+        .select2-selection__rendered{
+            font-size: 48px;
+            line-height: 62px;
+            font-weight: 900;
+            color: #6DCAAB;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__rendered{
+            line-height: 62px;
+            color: #6DCAAB;
+            padding: 0;
+        }
+        .select2-container--default .select2-selection--single{
+            border: none;
+            border-radius: 0;
+            height: 62px;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow{
+            width: 40px;
+            height: 40px;
+            background-image: url(../img/chevron-down-big.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow b{
+            display: none;
+        }
+    }
+}
+
+
+.menu{
+    text-align: center;
+    margin-bottom: -45px;
+    &__item{
+        margin-bottom: 45px;
+    }
+    &__item-img{
+        margin-bottom: 10px;
+        img{
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+    }
+    &__item-type{
+        font-size: 16px;
+        line-height: 28px;
+        color: $grey;
+        margin-bottom: 8px;
+    }
+    &__item-title{
+        font-size: 22px;
+        line-height: 27px;
+        font-weight: 500;
+        color: #000;
+        margin-bottom: 14px;
+    }
+    &__item-info{
+        color: #6DCAAB;
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 500;
+    }
+}
+
+.day-type{
+    display: none;
+    &.active{
+        display: block;
+    }
+}
+
+.type-select{
+    position: relative;
+    &__current{
+        font-size: 48px;
+        line-height: 62px;
+        font-weight: 900;
+        color: #6DCAAB;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        span{
+            margin-right: 5px;
+        }
+        &:after{
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-image: url(../img/chevron-down-big.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    &__list{
+        width: 110px;
+        background: #FFFFFF;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        display: none;
+    }
+    &__item{
+        line-height: 46px;
+        height: 46px;
+        padding: 0 30px;
+        font-size: 18px;
+        color: #000;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(229, 229, 229, 0.7);
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover{
+            color: #6DCAAB;
+        }
+    }
+}
+
+@include media-breakpoint-down(lg){
+    .day-content{
+        &__header{
+            flex-wrap: wrap;
+        }
+        &__title{
+            width: 100%;
+        }
+    }
+}
+
+@include media-breakpoint-down(md){
+    .days{
+        top: 20px;
+        li{
+            margin-right: 20px;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm){
+    .days{
+        display: none;
+    }
+
+    .days-mobile{
+        font-size: 16px;
+        line-height: 19px;
+        border: none;
+        text-transform: uppercase;
+        font-weight: 500;
+        position: absolute;
+        top: 76px;
+        right: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 0;
+        background: none;
+        background-image: url(../img/chevron-down-big.svg);
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: 14px;
+        padding-right: 20px;
+        &:focus{
+            outline: none;
+        }
+    }
+
+    .day-content{
+        &__cal{
+            font-size: 24px;
+            line-height: 28px;
+        }
+        &__title{
+            margin-bottom: 15px;
+        }
+    }
+
+    .type-select-mobile{
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 900;
+        color: #6DCAAB;
+        border: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 0;
+        background: none;
+        background-image: url(../img/chevron-down-big.svg);
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: 14px;
+        padding-right: 20px;
+        &:focus{
+            outline: none;
+        }
+    }
+
+
+    .type-select{
+        &__current{
+            font-size: 24px;
+            line-height: 28px;
+            span{
+                margin-right: 10px;
+            }
+            &:after{
+                width: 14px;
+                height: 14px;
+                background-size: contain;
+            }
+        }
+    }
+
+    .menu{
+        &__item-img{
+            margin-bottom: 0;
+        }
+        &__item-title{
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 8px;
+        }
+    }
+
+    .menu-wrap{
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .menu{
+        .row{
+            flex-wrap: nowrap;
+        }
+        .col-3{
+            min-width: 250px;
+        }
+
+    }
+}

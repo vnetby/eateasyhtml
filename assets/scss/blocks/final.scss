@@ -1,0 +1,112 @@
+.final{
+    padding: 99px 0;
+    background-color: #F6F6F6;
+    &__icon{
+        margin-bottom: 16px;
+    }
+    &__title{
+        margin-bottom: 16px;
+    }
+    &__info{
+        padding: 45px 60px;
+        max-width: 450px;
+        width: 100%;
+        color: $white;
+        background-color: #6DCAAB;
+        border-radius: 24px;
+    }
+    &__text{
+        font-size: 16px;
+        line-height: 28px;
+    }
+    &__info-title{
+        margin-bottom: 30px;
+        color: inherit;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 30px;
+    }
+    &__item{
+        margin-bottom: 36px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    &__item-title{
+        margin-bottom: 14px;
+        font-size: 16px;
+        line-height: 28px;
+        color: rgba($white, 0.7);
+    }
+    &__item-text{
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+    }
+    &__promo{
+        padding-bottom: 220px;
+    }
+    &__write-us{
+        margin-top: 18px;
+    }
+    &__contacts{
+        margin-top: -110px;
+    }
+}
+
+.final--single{
+  flex-grow: 1;
+}
+
+@include media-breakpoint-down(md){
+    .final{
+        &__info{
+            padding: 30px 45px;
+        }
+        &__promo{
+            padding-bottom: 0;
+        }
+        &__contacts{
+            margin-top: 80px;
+            text-align: center;
+        }
+        &__write-us{
+            justify-content: center;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm){
+    .final{
+        padding: 60px 0;
+        &__promo{
+            margin-bottom: 40px;
+        }
+        &__contacts{
+            margin-top: 40px;
+        }
+        &__icon{
+            display: block;
+            width: 64px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+@include media-breakpoint-down(xs){
+    .final{
+        &__info{
+            padding: 35px 20px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        &__text{
+            text-align: center;
+        }
+        &__title{
+            text-align: center;
+            font-size: 27px;
+        }
+    }
+}

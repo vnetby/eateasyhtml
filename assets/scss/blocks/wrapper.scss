@@ -1,0 +1,24 @@
+.wrapper{
+    min-height: 100vh;
+    padding-top: 144px;
+    display: flex;
+    flex-direction: column;
+}
+
+@include media-breakpoint-down(lg){
+    .wrapper{
+        padding-top: 134px;
+    }
+}
+
+@include media-breakpoint-down(md){
+    .wrapper{
+        padding-top: 144px;
+    }
+}
+
+@include media-breakpoint-down(sm){
+    .wrapper{
+        padding-top: 83px;
+    }
+}

@@ -1,0 +1,126 @@
+.activities-level{
+    max-width: 100%;
+    margin-bottom: 50px;
+    &__title{
+        font-size: 18px;
+        line-height: 21px;
+        color: #000000;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+    &__group{
+        display: flex;
+        align-items: center;
+    }
+    &__notice{
+        margin-top: 16px;
+        font-size: 16px;
+        line-height: 19px;
+        color: #5E5E5E;
+    }
+}    
+
+.activities-level__item{  
+    height: 62px;
+    line-height: 62px;
+    background-color: #fff;
+    position: relative;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 500;
+    border-right: 1px solid #E5E5E5;
+    transition: 0.3s; 
+    overflow: hidden;
+    margin-bottom: 0;
+    cursor: pointer;
+    &-body{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+    }
+    input{
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        &:checked ~ .activities-level__item-body{
+            background-color: #6DCAAB;
+            color: #ffffff;
+        }
+    }
+    &:first-child{
+        border-radius: 40px 0 0 40px;
+    }
+    &:last-child{
+        border-radius: 0 40px 40px 0;
+    }
+    &:nth-child(1){
+        width: 21.5%;
+    }
+    &:nth-child(2){
+        width: 21.5%;
+    }
+    &:nth-child(3){
+        width: 27%;
+    }
+    &:nth-child(4){
+        width: 30%;
+    }
+}
+
+@include media-breakpoint-down(sm){
+    .activities-level{
+        margin-bottom: 32px;
+        &__title{
+            font-size: 16px;
+            line-height: 19px;
+            margin-bottom: 16px;
+        }
+        &__notice{
+            font-size: 14px;
+            line-height: 20px;
+        }
+        &__group{
+            flex-wrap: wrap;
+            position: relative;
+            &:after{
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 100%;
+                transform: translateY(-50%);
+                border-bottom: 1px solid #E5E5E5;
+            }
+        }
+        &__item{
+            height: 56px;
+            &:nth-child(1){
+                width: 50%;
+                border-radius: 28px 0 0 0;
+            }
+            &:nth-child(2){
+                width: 50%;
+                border-radius: 0 28px 0 0;
+            }
+            &:nth-child(3){
+                width: 50%;
+                border-radius: 0 0 0px 28px;
+            }
+            &:nth-child(4){
+                width: 50%;
+                border-radius: 0 0 28px 0;
+            }
+        }
+        &__item-text{
+            font-size: 14px;
+            line-height: 19px;
+        }
+    }
+}

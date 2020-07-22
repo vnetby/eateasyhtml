@@ -1,0 +1,171 @@
+.faq-section{
+    &__title{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    &__tabs-wrap{
+        margin-bottom: 25px;
+    }
+    &__tabs{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #EDEDED;
+        padding-bottom: 25px;
+        li{
+            cursor: pointer;
+            margin-right: 100px;
+            font-size: 16px;
+            line-height: 19px;
+            color: #000000;
+            transition: 0.3s;
+            position: relative;
+            &:after{
+                content: '';
+                position: absolute;
+                bottom: -25px;
+                left: -25px;
+                width: 0;
+                border-bottom: 4px solid #6DCAAB;
+                transition: 0.3s;
+            }
+            &:hover{
+                color: #6DCAAB;
+            }
+            &:last-child{
+                margin-right: 0;
+            }
+            &.active{
+                color: #6DCAAB;
+                &:after{
+                    width: calc(100% + 50px);
+                }
+            }
+        }
+    }
+    &__content{
+        display: none;
+        &.active{
+            display: block
+        }
+    }
+}
+            
+.accardion{
+    margin-bottom: 10px;
+    &:last-child{
+        margin-bottom: 0;
+    }
+    &__title{
+        padding: 30px 40px;
+        background: #F6F6F6;
+        border-radius: 24px;
+        font-size: 18px;
+        line-height: 21px;
+        color: #000000;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.3s;
+        position: relative;
+        &.active{
+            color: #6DCAAB;
+            &:after{
+                transform: rotate(90deg);
+            }
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            top: 30px;
+            right: 28px;
+            width: 24px;
+            height: 24%;
+            background-image: url(../img/chevron-down.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            transition: 0.3s;
+        }
+    }
+    &__body{
+        padding: 30px 40px;
+        margin-bottom: -30px;
+        display: none;
+        p{
+            font-size: 16px;
+            line-height: 32px;
+            margin-bottom: 30px;
+        }
+        ul{
+            font-size: 16px;
+            line-height: 32px;
+            margin-bottom: 30px;
+            li{
+                &:before{
+                    content: '-';
+                    display: inline-block;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(lg){
+    .faq-section{
+        &__tabs{
+            li{
+                margin-right: 80px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md){
+    .faq-section{
+        &__tabs{
+            li{
+                margin-right: 50px
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm){
+    .faq-section{
+        &__tabs-wrap{
+            overflow-y: auto
+        }
+        &__tabs{
+            justify-content: flex-start;
+            li{
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(xs){
+    .accardion{
+        &__title{
+            padding: 20px 30px 20px 15px;
+            font-size: 16px;
+            &:after{
+                right: 14px;
+            }
+        }
+        &__body{
+            padding: 20px 15px;
+            p{
+                font-size: 14px;
+                line-height: 22px;
+                margin-bottom: 15px;
+            }
+            ul{
+                font-size: 14px;
+                line-height: 22px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

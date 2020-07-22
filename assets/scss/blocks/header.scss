@@ -1,0 +1,240 @@
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: #fff;
+    &__logo{
+        width: 179px;
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+    &__top{
+        border-bottom: 1px solid #E5E5E5;
+    }
+    &__top-inner{
+        padding: 8px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__adress{
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        line-height: 16px;
+        img{
+            margin-right: 10px;
+        }
+    }
+    &__group{
+        display: flex;
+        align-items: center;
+    }
+    &__phone{
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        line-height: 16px;
+        color: #000;
+        transition: 0.3s;
+        margin-right: 30px;
+        img{
+            margin-right: 10px;
+        }
+        &:hover{
+            color: #6DCAAB;
+        }
+    }
+    &__email{
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        line-height: 16px;
+        color: #000;
+        transition: 0.3s;
+        img{
+            margin-right: 10px;
+        }
+        &:hover{
+            color: #6DCAAB;
+        }
+    }
+    &__bot{
+        padding: 25px 0;
+        &.sticky{
+            position: fixed;
+            width: 100%;
+            background-color: #fff;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            border-bottom: 1px solid #b5b5b5;
+        }
+    }
+    &__nav{
+        ul{
+            display: flex;
+            align-items: center;
+            li{
+                display: flex;
+                align-items: center;
+                margin-right: 30px;
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+            a{
+                font-size: 16px;
+                line-height: 19px;
+                font-weight: 500;
+                color: #000;
+                transition: 0.3s;
+                &:hover{
+                    color: #6DCAAB;
+                }
+            }
+        }
+    }
+    &__menu-btn{
+        z-index: 6;
+        width: 15px;
+        min-width: 25px;
+        height: 42px;
+        position: relative;
+        margin-left: 20px;
+        transition: .3s;
+        cursor: pointer;
+        span{
+            display: block;
+            position: absolute;
+            border-bottom: 3px solid #000;
+            width: 100%;
+            background: #ffffff;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .2s;
+            &:nth-child(1){
+                top: 12.5px;
+            }
+            &:nth-child(2), &:nth-child(3){
+                top: 19.5px;
+            }
+            &:nth-child(4){
+                top: 26.5px;
+            }
+        }
+        &.open span{
+            &:nth-child(1){
+                top: 18px;
+                width: 0%;
+                left: 50%;
+            }
+            &:nth-child(2){
+                transform: rotate(45deg);
+            }
+            &:nth-child(3){
+                transform: rotate(-45deg);
+            }
+            &:nth-child(4){
+                top: 18px;
+                width: 0%;
+                left: 50%;
+            }
+        }
+    }
+    &__mobile-group{
+        display: flex;
+        align-items: center;
+    }
+    &__bot{
+        border-bottom: 1px solid transparent;
+    }
+    &__btn-green{
+        color: #6DCAAB;
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 500;
+        text-align: right;
+        display: block;
+        &:hover{
+            color: $black;
+        }
+    }
+    &__mob-phone-icon{
+        display: none;
+    }
+}
+.phone__bot{
+    margin-right: 0px;
+    align-items: end;
+}
+
+@include media-breakpoint-down(lg){
+    .header{
+        &__adress{
+            font-size: 13px;
+        }
+        &__phone{
+            font-size: 13px;
+        }
+        &__email{
+            font-size: 13px;
+        }
+        &__logo{
+            width: 160px;
+        }
+        &__nav{
+            ul{
+                a{
+                    font-size: 14px;
+                    line-height: 19px;
+                }
+                li{
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        .btn{
+            height: 44px;
+            line-height: 44px;
+            padding: 0 30px;
+        }
+        &__bot{
+            padding: 20px 0;
+        }
+    }
+}
+@include media-breakpoint-down(md){
+    .header{
+        &__callback-buttons{
+            display: none;
+        }
+        &__mob-phone-icon{
+            display: block;
+        }
+    }
+    .phone__bot{
+        margin-top: 10px;
+        font-size: 18px;
+        align-items: center;
+    }
+}
+@include media-breakpoint-down(sm){
+    .header{
+        .btn{
+            display: none;
+        }
+        &__bot{
+            padding: 10px 0;
+        }
+        &__logo{
+            width: 130px;
+        }
+    }
+}

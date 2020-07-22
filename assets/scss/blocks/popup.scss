@@ -1,0 +1,42 @@
+.popup{
+    background: #F6F6F6;
+    padding: 30px 40px;
+    max-width: 380px;
+    &__title{
+        font-size: 24px;
+        line-height: 30px;
+        font-weight: 900;
+        color: #000;
+        margin-bottom: 30px;
+    }
+    &__text{
+        margin-bottom: 24px;
+        font-size: 16px;
+        line-height: 28px;
+    }   
+    .input{
+        margin-bottom: 20px;
+    }
+    .btn{
+        width: 100%;
+        text-align: center;
+        height: 62px;
+        line-height: 62px;
+        border: none;
+    }
+}
+    
+.input{
+    height: 62px;
+    line-height: 62px;
+    border-radius: 40px;
+    border: none;
+    background-color: #fff;
+    padding: 0 30px;
+    font-size: 18px;
+    color: #000;
+    width: 100%;
+    &::placholder{
+        color: rgba(0, 0, 0, 0.6);
+    }
+}

@@ -1,0 +1,158 @@
+.footer{
+    flex-shrink: 0;
+    background: #212121;
+    padding: 80px 0;
+    &__logo{
+        margin-bottom: 25px;
+        display: block;
+    }
+    &__desc-text{
+        font-size: 14px;
+        line-height: 23px;
+        color: #ffffff;
+        margin-bottom: 25px;
+        max-width: 210px;
+    }
+    &__title{
+        font-size: 24px;
+        line-height: 30px;
+        font-weight: 900;
+        color: #ffffff;
+        margin-bottom: 30px;
+    }
+    &__nav{
+        li{
+            padding-left: 30px;
+            margin-bottom: 15px;
+            position: relative;
+            &:before{
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                transform: translateY(-50%);
+                width: 10px;
+                height: 10px;
+                background-image: url(../img/chevron-left-white.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        a{
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 19px;
+            transition: 0.3s;
+            &:hover{
+                color: #6DCAAB;
+            }
+        }
+    }
+    &__block{
+        margin-bottom: 30px;
+        padding-left: 40px;
+        position: relative;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    &__block-icon{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &__block-title{
+        font-size: 16px;
+        line-height: 19px;
+        color: #ffffff;
+        margin-bottom: 8px;
+    }
+    &__block-text{
+        font-size: 14px;
+        line-height: 28px;
+        color: #ffffff;
+        a{
+            color: #ffffff;
+            transition: 0.3s;
+            &:hover{
+                color: #6DCAAB;
+            }
+        }
+    }
+}
+
+.socials{
+    display: flex;
+    align-items: center;
+    li{
+        margin-right: 15px;
+    }
+    a{
+        svg{
+            rect{
+                fill: #ffffff;
+                transition: 0.3s;
+            }
+            path{
+                fill: #343434;
+                transition: 0.3s;
+            }
+        }
+
+        &:hover{
+            svg{
+                rect{
+                    fill: #6DCAAB;
+                }
+                path{
+                    fill: #ffffff;
+                }
+            }
+        }
+    }
+}
+
+
+.insta-grid{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -8px;
+    &__item{
+        padding: 0 8px;
+        margin-bottom: 16px;
+        display: block;
+        img{
+            width: 74px;
+            height: 74px;
+            border-radius: 22px;
+            display: block;
+            object-fit: cover;
+        }
+    }
+}
+
+@include media-breakpoint-down(md){
+    .footer{
+        .socials{
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm){
+    .footer{
+        padding: 50px 0;
+        &__nav{
+            margin-bottom: 40px;
+        }
+        &__block{
+            &:last-child{
+                margin-bottom: 40px;
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+
+// GLOBAL STYLES
+// @import "global/custom-variables";
+
+@import "global/functions";
+@import "global/bootstrap-variables";
+@import "global/mixins";
+@import "global/reboot";
+@import "global/grid";
+@import "global/utilities";
+@import "global/global";
+@import "global/visually-hidden";
+
+@import "blocks/vars.scss";
+@import "blocks/base.scss";
+@import "blocks/reset.scss";
+
+// PLUGINS STYLE
+@import "plugins/slick.scss";
+@import "plugins/fancybox.scss";
+@import "plugins/datepicker.scss";
+@import "plugins/nice-select.scss";
+
+// BLOCKS STYLE
+@import "blocks/wrapper.scss";
+@import "blocks/header.scss";
+@import "blocks/footer.scss";
+@import "blocks/about-section.scss";
+@import "blocks/faq-section.scss";
+@import "blocks/form.scss";
+@import "blocks/hero-section.scss";
+@import "blocks/menu-section.scss";
+@import "blocks/mobile-menu.scss";
+@import "blocks/panel.scss";
+@import "blocks/popup.scss";
+@import "blocks/program-section.scss";
+@import "blocks/reviews-section.scss";
+@import "blocks/steps-section.scss";
+
+@import "blocks/panel-program.scss";
+@import "blocks/activites-level.scss";
+@import "blocks/target.scss";
+@import "blocks/params.scss";
+@import "blocks/programs.scss";
+@import "blocks/login-form.scss";
+@import "blocks/advantage.scss";
+@import "blocks/promo.scss";
+@import "blocks/popular-dishes.scss";
+@import "blocks/download-app.scss";
+@import "blocks/get-request.scss";
+@import "blocks/final.scss";
+@import "blocks/write-us.scss";
